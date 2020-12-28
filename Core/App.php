@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Core;
+namespace Core;
 
 class App
 {
@@ -13,7 +13,7 @@ class App
     public static function get($key)
     {
         if (!array_key_exists($key, static::$registry)) {
-            throw new Exception("Helaas, {$key} is niet gebonden aan deze container.");
+            throw new \Exception("Helaas, {$key} is niet gebonden aan deze container.");
         }
 
         return static::$registry[$key];

@@ -1,12 +1,29 @@
 <?php
 
+namespace Core\Database;
+
+use Core\App;
+
 class QueryBuilder
 {
     protected $pdo;
 
-    public function __construct(PDO $pdo)
+    public function __construct(\PDO $pdo)
     {
         $this->pdo = $pdo;
+    }
+    public static function query($query, $executeString = array())
+    {
+        $dbh = App::get('database')->pdo;
+
+        try {
+            $stmt = $dbh->prepare($query);
+            $stmt->execute($executeString);
+        } catch (\PDOException $e) {
+            var_dump($e->getMessage());
+        }
+
+        return $stmt;
     }
 
     public function selectAll($table)
@@ -15,7 +32,7 @@ class QueryBuilder
 
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_CLASS);
+        return $statement->fetchAll(\PDO::FETCH_CLASS);
     }
 
     public function insert($table, $params)
@@ -30,7 +47,7 @@ class QueryBuilder
             $statement = $this->pdo->prepare($sql);
 
             $statement->execute($params);
-        } catch (Exception $e) {
+        } catch (\Exception $e) {
             die('Oeps, er ging iets goed mis...');
         }
     }
