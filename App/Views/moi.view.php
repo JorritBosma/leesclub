@@ -1,4 +1,4 @@
-<?php require('partials/head1.php'); ?>
+<?php require('partials/head2.php'); ?>
 
 <h1>Mijn profieletje</h1>
 

@@ -1,9 +1,7 @@
-<?php require('partials/head1.php'); ?>
+<?php require('partials/head2.php'); ?>
 
-<h1>Alle Boeken</h1>
+<h1>Boeken- én wenslijst. If-logica moet checken welke titel hier komt.</h1>
 
-<p>Hier komen alle boeken van een user te staan. Voor nu alle boeken überhaupt, want users/login ga ik nog bouwen.</p>
-
-
+<p>Een lijst van gelezen of nog te lezen boeken, aanklikbaar voor afzonderlijke showpages per boek.</p>
 
 <?php require('partials/footer.php'); ?>
