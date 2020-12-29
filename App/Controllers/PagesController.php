@@ -13,9 +13,4 @@ class PagesController
     {
         return view('about');
     }
-
-    public function contact()
-    {
-        return view('contact');
-    }
 }
