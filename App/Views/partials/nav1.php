@@ -9,5 +9,8 @@
         <li>
             <a href="books">Alle Boeken</a>
         </li>
+        <li>
+            <a href="home">Fake Inloggen</a>
+        </li>
     </ul>
 </nav>

@@ -2,9 +2,10 @@
 
 namespace App\Controllers;
 
+// Deze controller is voor de statische pagina's, zowel de publieke als die waarvoor je moet zijn ingelogd.
 class PagesController
 {
-    public function home()
+    public function landing()
     {
         return view('index');
     }
@@ -12,5 +13,15 @@ class PagesController
     public function about()
     {
         return view('about');
+    }
+
+    public function home()
+    {
+        return view('home');
+    }
+
+    public function faq()
+    {
+        return view('faq');
     }
 }
