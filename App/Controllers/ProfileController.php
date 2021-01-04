@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
-use Core\App;
+use App\Libraries\View;
 
 class ProfileController
 {
     public function index()
     {
-        return view('moi');
+        return View::render('moi');
     }
 
     public function update()

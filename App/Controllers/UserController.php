@@ -2,17 +2,17 @@
 
 namespace App\Controllers;
 
-use Core\App;
+use App\Libraries\View;
 
 class UserController
 {
     public function index()
     {
-        return view('users');
+        return View::render('users');
     }
 
     public function show()
     {
-        return view('toi');
+        return View::render('toi');
     }
 }

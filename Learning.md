@@ -30,4 +30,6 @@ I want to rebuild my skeleton so I can use the handy functions in MySql for my C
 On the one hand: I lost a lot of time: why not use Toby's skeleton in the first place.
 On the other hand: I have a much deeper understanding of the skeleton now which will help me a lot using it and building on it.
 
-# login
+# styling-101
+Adding basic styling (bootstrap containers, some colors, navbar) so it doesn't look so ugly anymore while developing. Final styling will follow if I have the time or when needed.
+Also I updated View.php (to the write path App/Views and to auto-include .view as well) and used it in the controllers to render/redirect, calling on the right methods now.

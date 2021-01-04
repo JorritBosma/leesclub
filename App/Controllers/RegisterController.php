@@ -2,13 +2,13 @@
 
 namespace App\Controllers;
 
-use Core\App;
+use App\Libraries\View;
 
 class RegisterController
 {
     public function index()
     {
-        return view('register');
+        return View::render('register');
     }
 
     public function store()
