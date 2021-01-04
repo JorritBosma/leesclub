@@ -1,22 +1,14 @@
 <?php
 
-use Core\App;
-use Core\Database\QueryBuilder;
-use Core\Database\Connection;
+require 'vendor/autoload.php';
 
-App::bind('config', require 'config.php');
+session_start();
 
-App::bind('database', new QueryBuilder(
-    Connection::make(App::get('config')['database'])
-));
+$dotenv = \Dotenv\Dotenv::createImmutable($_SERVER['DOCUMENT_ROOT']);
+$dotenv->load();
 
-function view($name, $data = [])
-{
-    extract($data);
-    return require "App/Views/{$name}.view.php";
-}
+require 'App/Helpers/Helper.php';
 
-function redirect($path)
-{
-    header("Location: /{$path}");
-}
+$msg = new \Plasticbrain\FlashMessages\FlashMessages();
+
+$msg->display();

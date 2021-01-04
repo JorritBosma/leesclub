@@ -1,4 +1,4 @@
-<?php require('partials/head2.php'); ?>
+<?php require('partials/header.view.php'); ?>
 
 <h1>Titel boek</h1>
 
@@ -7,4 +7,4 @@
 <p>Vinkje 'gelezen' boolean.</p>
 <p>Commentaren van gebruikers.</p>
 
-<?php require('partials/footer.php'); ?>
+<?php require('partials/footer.view.php'); ?>

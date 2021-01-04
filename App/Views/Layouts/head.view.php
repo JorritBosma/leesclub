@@ -9,4 +9,3 @@
 </head>
 
 <body>
-    <?php require('nav2.php'); ?>

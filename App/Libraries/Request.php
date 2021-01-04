@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Core;
+namespace App\Libraries;
 
 class Request
 {
+
     public static function uri()
     {
         return trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
@@ -13,8 +14,12 @@ class Request
     {
         return $_SERVER['REQUEST_METHOD'];
     }
-}
 
+    public static function ajax()
+    {
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest';
+    }
+}
 // parse_url heeft meerdere methoden. 
 // PHP_URL_PATH geeft je alleen de path, dus niet de query. 
 // handig om naar je endpoint te komen.

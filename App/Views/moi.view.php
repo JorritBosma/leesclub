@@ -1,4 +1,4 @@
-<?php require('partials/head2.php'); ?>
+<?php require('partials/header.view.php'); ?>
 
 <h1>Mijn profieletje</h1>
 
@@ -8,4 +8,4 @@
 
 
 
-<?php require('partials/footer.php'); ?>
+<?php require('partials/footer.view.php'); ?>

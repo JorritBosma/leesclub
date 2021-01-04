@@ -2,8 +2,7 @@
 
 namespace Core\Database;
 
-use Core\Database\QueryBuilder;
-use Core\App;
+use App\Libraries\MySql;
 
 /**
  * Check for files which holds database queries to create scheme's
@@ -29,25 +28,25 @@ class MigrateDatabase
         // get files from current directory
         $files = scandir(__DIR__ . "/Migrations/", SCANDIR_SORT_ASCENDING);
 
-        if (count($files) > 1) {
+        if (count($files) >= 1) {
             foreach ($files as $file) {
                 // skip files that doesn't represent migration data
                 if (trim(strtolower($file)) !== 'migrate.php' && $file !== '.' && $file !== '..') {
                     $migrationData = require_once __DIR__ . "/Migrations/" . $file;
 
                     if (self::$dropTable) {
-                        QueryBuilder::query($migrationData['drop_scheme']);
+                        MySql::query($migrationData['drop_scheme']);
                     }
 
-                    QueryBuilder::query($migrationData['scheme']);
+                    MySql::query($migrationData['scheme']);
 
                     if (self::$seed && isset($migrationData['seeder'])) {
                         if ($migrationData['seeder']['type'] == 'array') {
                             foreach ($migrationData['seeder']['data'] as $seed) {
-                                App::get('database')->insert($migrationData['table_name'], $seed);
+                                MySql::insert($seed, $migrationData['table_name']);
                             }
                         } else if ($migrationData['seeder']['type'] == 'sql') {
-                            QueryBuilder::query($migrationData['seeder']['data']);
+                            MySql::query($migrationData['seeder']['data']);
                         }
                     }
                 }

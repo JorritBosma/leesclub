@@ -1,7 +1,7 @@
-<?php require('partials/head1.php'); ?>
+<?php require('partials/header.view.php'); ?>
 
 <h1>Inloggen.</h1>
 
 <p>Inlogformulier die post naar /login.</p>
 
-<?php require('partials/footer.php'); ?>
+<?php require('partials/footer.view.php'); ?>
