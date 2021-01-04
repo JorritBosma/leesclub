@@ -1,1 +1,2 @@
-<footer>Leesclub</footer>
+<footer class='footer align-bottom'>&copy; Leesclub</footer>
+</main>
