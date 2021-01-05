@@ -3,12 +3,15 @@ A website to keep track of books you have read and books you want to read.
 You can also check out what other users are reading and start a conversation in the comment section.
 The wireframe is available at https://octopus.do/yxtokmk3nki.
 
-# routing
-Added basic routes and created all the necessary controllers and views.
-I am still wondering how to create login but will learn it tomorrow in a FAQ-session.
-Also, update should render the book.view or the user.view, but the form should be prepopulated with existing data. I forgot how to do this, did it once in express already.
-Another point would be the 'read' boolean. This is important for the books-view to show the list of read books or the wishlist. A book on the wishlist can be updated to read, but then more fields in the form will be required. Will figure that stuff out when I get there.
+Follow these steps to get Leesclub up and running on your own machine:
 
-Next branch: bookmodel. Creating my books-model and seeds-file from Access-database.
+1. Open your Terminal.
+2. Go to the directory you want to clone my project into.
+3. Type "git clone https://github.com/JorritBosma/leesclub" and hit enter. This will create a directory 'leesclub' with all the necessary project files.
+4. Open up this folder in VSCode or another code editor.
+5. Create a .env-file, copy the contents of .env.example into it and fill in the blanks (db-user and -password). This makes it possible to create a local database. Make sure the db-user has enough rights to create, insert, update and delete. When in doubt, you can use the root-user.
+6. In Terminal run this command: "composer install". This will install all the necessary packages and dependencies into your local vendor-directory.
+7. Start up a server using "php -S localhost:8080" (or another port number), or use Valet if you prefer that.
+8. You're good to go! Visit localhost:8080 in your browser (or use Valet) and enjoy Leesclub.
 
-After that high on my list are basic styling, flash-Plastic brain, CRUD-functionality for books, Usermodel, Register-functionality, Login-functionality, the Wishlist-Problem and fun stuff like randomizer, comments-functionality, user statistics (number of books/pages read overall, per month, favorite writer, etc etc).
+If you have any feedback on this project, whether you like it or you see room for improvement or or you found some bugs, please send me an email on bosma.jorrit@gmail.com. I value your feedback and will send you a repsonse.

@@ -2,14 +2,14 @@
 
 namespace App\Controllers;
 
-use Core\App;
+use App\Libraries\View;
 
 class LoginController
 {
     public function index()
     {
         // logic to see if user is loggedIn, if so redirect to homepage
-        return view('login');
+        return View::render('login');
     }
 
     public function login()
@@ -21,6 +21,6 @@ class LoginController
     {
         session_destroy();
 
-        return view('home');
+        return View::redirect('home');
     }
 }

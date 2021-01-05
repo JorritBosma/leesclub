@@ -1,26 +1,26 @@
 <?php
 
 
-$router->get('', 'PagesController@landing');
-$router->get('about', 'PagesController@about');
-$router->get('home', 'PagesController@home');
-$router->get('faq', 'PagesController@faq');
+$router->get('', 'App/Controllers/PagesController.php@landing');
+$router->get('about', 'App/Controllers/PagesController.php@about');
+$router->get('home', 'App/Controllers/PagesController.php@home');
+$router->get('faq', 'App/Controllers/PagesController.php@faq');
 
 
-$router->get('moi', 'ProfileController@index');
-$router->post('moi', 'ProfileController@update');
+$router->get('moi', 'App/Controllers/ProfileController.php@index');
+$router->post('moi', 'App/Controllers/ProfileController.php@update');
 
-$router->get('users', 'UserController@index');
+$router->get('users', 'App/Controllers/UserController.php@index');
 
-$router->get('register', 'RegisterController@index');
-$router->post('register', 'RegisterController@store');
+$router->get('register', 'App/Controllers/RegisterController.php@index');
+$router->post('register', 'App/Controllers/RegisterController.php@store');
 
-$router->get('login', 'LoginController@index');
-$router->post('login', 'LoginController@login');
-$router->get('logout', 'LoginController@logout');
+$router->get('login', 'App/Controllers/LoginController.php@index');
+$router->post('login', 'App/Controllers/LoginController.php@login');
+$router->get('logout', 'App/Controllers/LoginController.php@logout');
 
-$router->get('books', 'BooksController@index');
-$router->post('books', 'BooksController@store');
-$router->get('books-add', 'BooksController@add');
+$router->get('books', 'App/Controllers/BooksController.php@index');
+$router->post('books', 'App/Controllers/BooksController.php@store');
+$router->get('books-add', 'App/Controllers/BooksController.php@add');
 
-$router->get('wishlist', 'WishlistController@index');
+$router->get('wishlist', 'App/Controllers/WishlistController.php@index');

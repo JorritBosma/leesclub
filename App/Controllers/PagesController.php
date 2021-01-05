@@ -2,26 +2,27 @@
 
 namespace App\Controllers;
 
+use App\Libraries\View;
 // Deze controller is voor de statische pagina's, zowel de publieke als die waarvoor je moet zijn ingelogd.
 class PagesController
 {
     public function landing()
     {
-        return view('index');
+        return View::render('index');
     }
 
     public function about()
     {
-        return view('about');
+        return View::render('about');
     }
 
     public function home()
     {
-        return view('home');
+        return View::render('home');
     }
 
     public function faq()
     {
-        return view('faq');
+        return View::render('faq');
     }
 }
