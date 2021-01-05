@@ -8,7 +8,7 @@ return [
     'scheme' => "CREATE TABLE IF NOT EXISTS `users` (
         `id` int(11) NOT NULL AUTO_INCREMENT,
         `first_name` varchar(80) NOT NULL,
-        `insertion` varchar(20),
+        `prefix` varchar(20),
         `last_name` varchar(80) NOT NULL,
         `email` varchar(255) NOT NULL,
         `password` varchar(255) NOT NULL,
