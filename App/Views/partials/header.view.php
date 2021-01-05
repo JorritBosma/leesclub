@@ -3,13 +3,13 @@
     <div class="row">
         <div class="col-md-6">
             <span class="book-icon">
-                <img src="/public/images/book-stack-512.png">
-                <div>
-                    <h1>Leesclub</h1>
-                </div>
+                <img src="/public/images/book-stack-512.png">&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="/">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="/about">About</a>
+
             </span>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-end">
             <div class="user-info">
                 <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
                     <div>
@@ -22,7 +22,7 @@
                     </div>
                 <?php else : ?>
                     <div>
-                        <a href="/login">Log in</a>&nbsp;&nbsp;|
+                        <a href="/login">Log in</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                         <a href="/register">Register</a>
                     </div>
                 <?php endif; ?>
