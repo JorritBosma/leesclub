@@ -35,7 +35,7 @@ class RegisterController
                 'email'      => $_REQUEST['email'],
                 'password'   => password_hash($_REQUEST['password'], PASSWORD_DEFAULT),
                 'city'       => $_REQUEST['city'],
-                'birthday'   => $_REQUEST['birthday'],
+                'province'   => $_REQUEST['province'],
                 'bio'        => $_REQUEST['bio'],
                 'role'       => $_REQUEST['role'] = 2,
                 'created_by' => $_REQUEST['created_by'] = 2,
@@ -52,7 +52,7 @@ class RegisterController
             return json_encode([
                 'success'  => true,
                 'message'  => "Ok :-)",
-                'redirect' => "home"
+                'redirect' => "/"
             ]);
         }
     }

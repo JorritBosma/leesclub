@@ -11,6 +11,10 @@ body {
     box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.5);
 }
 
+.register-main {
+    height: 100vh;
+}
+
 .landing {
     text-align: center;
 }
@@ -36,9 +40,17 @@ body {
     margin-left: 20px;
 }
 
+.register-form {
+    height: 100%;
+}
+
 .footer {
     width: 100%;
     text-align: center;
+}
+
+.login-overlay {
+    height: 100vh;
 }
 /* 
 .center-box {
