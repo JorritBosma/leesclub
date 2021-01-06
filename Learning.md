@@ -33,3 +33,8 @@ On the other hand: I have a much deeper understanding of the skeleton now which 
 # styling-101
 Adding basic styling (bootstrap containers, some colors, navbar) so it doesn't look so ugly anymore while developing. Final styling will follow if I have the time or when needed.
 Also I updated View.php (to the write path App/Views and to auto-include .view as well) and used it in the controllers to render/redirect, calling on the right methods now.
+
+# login
+Working on login. Struggling a lot with Bootstrap/CSS to position and lay-out the form.
+Wondering if I can do a simple post using action="/register" or if I have to use the complicated Jquery-logic for the ajax-post (Toby skeleton).
+It is not finished yet - the form needs more fields (city/birthday/bio) and styling. It does submit to database already.
