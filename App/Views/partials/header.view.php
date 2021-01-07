@@ -14,9 +14,9 @@
                 <?php if (isset($_SESSION) && isset($_SESSION['user'])) : ?>
                     <div>
                         <a href="moi"><?= $_SESSION['user']['full_name'] ?></a>
-                        <span>
+                        <span class="logout-icon">
                             <a href="logout">
-                                <img src="images/logout.svg" id="logout" alt="logout" title="Log out" />
+                                <img src="public/images/logout-512.png" id="logout" alt="logout" title="Log out" />
                             </a>
                         </span>
                     </div>

@@ -1,4 +1,4 @@
-<main class="container mt-5 justify-content-center register-main">
+<main class="container mt-5 register-main">
     <?php require('partials/header.view.php'); ?>
     <div class="login-overlay">
         <div class="center-box register-form row g-3 align-items-center justify-content-center">
@@ -14,13 +14,11 @@
                     <form method="POST" onsubmit="return false;" name="frmRegister" class="row g-3 mt-2">
                         <div class="col-md-6">
                             <label for="first_name" class="form-label">Voornaam</label>
-                            <input type="text" class="form-control" name="first_name" id="first_name" maxlength="80"
-                                required>
+                            <input type="text" class="form-control" name="first_name" id="first_name" maxlength="80" required>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="last_name" class="form-label">Achternaam</label>
-                            <input type="text" class="form-control" name="last_name" id="last_name" maxlength="80"
-                                required>
+                            <input type="text" class="form-control" name="last_name" id="last_name" maxlength="80" required>
                         </div>
 
                         <div class="col-md-12 mb-3">
@@ -30,14 +28,12 @@
 
                         <div class="col-md-6">
                             <label for="password" class="form-label">Wachtwoord</label>
-                            <input type="password" class="form-control" name="password" id="password" maxlength="50"
-                                required>
+                            <input type="password" class="form-control" name="password" id="password" maxlength="50" required>
                         </div>
 
                         <div class="col-md-6 mb-3">
                             <label for="password_2" class="form-label">Herhaal wachtwoord</label>
-                            <input type="password" class="form-control" name="password_2" id="password_2" maxlength="50"
-                                required>
+                            <input type="password" class="form-control" name="password_2" id="password_2" maxlength="50" required>
                         </div>
 
                         <div class="col-md-6 mb-3">
@@ -47,8 +43,7 @@
 
                         <div class="col-md-6 mb-3">
                             <label for="province" class="form-label">Provincie</label>
-                            <input type="text" class="form-control" name="province" id="province" maxlength="255"
-                                required>
+                            <input type="text" class="form-control" name="province" id="province" maxlength="255" required>
                         </div>
 
                         <div class="col-md-12 mb-3">

@@ -38,3 +38,7 @@ Also I updated View.php (to the write path App/Views and to auto-include .view a
 Working on login. Struggling a lot with Bootstrap/CSS to position and lay-out the form.
 Wondering if I can do a simple post using action="/register" or if I have to use the complicated Jquery-logic for the ajax-post (Toby skeleton).
 It is not finished yet - the form needs more fields (city/birthday/bio) and styling. It does submit to database already.
+Forms need more styling and I need basic styling (navbar etc), but login is working now.
+Strange: dd($_SESSION) does not seem to work. 
+Remaining issue: Welcome flash message works on register, not on login.
+Next up: bookmodel and basic CRUD.
