@@ -46,5 +46,5 @@ Next up: bookmodel and basic CRUD.
 # bookmodel
 First I moved all my read-books to a seeder-file which I can use later. For now I will work with a migration-file of 15 records, 10 books I read recently and 5 books I want to read (whishlist). Will also add some books for test-user but that is a nice case to test CRUD-functionality.
 I defined my first function in the BookModel! To fetch books which I have read. I passed them on to the books.view and it's working. Need to style it but will do that later.
-Next small step: sending unread books to wishlist.view.
+I decided I do not need a WishlistController or view. It is basically doing and showing the same, the difference is just one boolean (finished_reading). Added it now.
 Next big step: relationships between books and users. I will add some books created by my Test-user.Do I need a seperate table? Or is the 'created by' sufficient? Probably it is not sufficient, because what if I want to add functionality later on where you can push a button on someone elses show-book.view to add it to your own list. Created by will be meaningless then. Let's find out. After that, I need to pass on the read books associated with the logged-in user, probably using $_SESSION or $_GET.

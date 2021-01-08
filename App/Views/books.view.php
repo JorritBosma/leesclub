@@ -1,4 +1,5 @@
 <?php require('partials/header.view.php'); ?>
+<h1><?= $vars['h1'] ?></h1>
 <div class="container-fluid">
     <?php if (isset($vars['books']) && count($vars['books'])) : ?>
         <div class="row">

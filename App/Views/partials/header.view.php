@@ -5,8 +5,9 @@
             <span class="book-icon">
                 <img src="/public/images/book-stack-512.png">&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="/">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-                <a href="/about">About</a>
-
+                <a href="/about">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="books">Gelezen boeken</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="wishlist">Wenslijst</a>
             </span>
         </div>
         <div class="col-md-6 text-end">

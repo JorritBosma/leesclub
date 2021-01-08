@@ -15,11 +15,18 @@ class BooksController
 
         View::render('books', [
             'books' => $books,
+            'h1'    => 'Gelezen boeken'
         ]);
     }
 
     public function wishlist()
     {
+        $books = BookModel::wishlist();
+
+        View::render('books', [
+            'books' => $books,
+            'h1'    => 'Verlanglijst'
+        ]);
     }
 
     public function show()

@@ -23,4 +23,4 @@ $router->get('books', 'App/Controllers/BooksController.php@index');
 $router->post('books', 'App/Controllers/BooksController.php@store');
 $router->get('books-add', 'App/Controllers/BooksController.php@add');
 
-$router->get('wishlist', 'App/Controllers/WishlistController.php@index');
+$router->get('wishlist', 'App/Controllers/BooksController.php@wishlist');
