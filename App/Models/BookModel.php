@@ -46,6 +46,19 @@ class BookModel extends Model
 
         return MySql::query($sql)->fetchAll(\PDO::FETCH_CLASS);
     }
+
+    public static function wishlist(array $selectedFields = null)
+    {
+        $fields = "*";
+
+        if (!empty($selectedFields) && count($selectedFields) > 0) {
+            $fields = self::composeQuery($selectedFields);
+        }
+
+        $sql = "SELECT " . $fields . " FROM " . 'books' . " WHERE deleted IS NULL AND finished_reading IS FALSE" . (!empty(self::$limit) ? " LIMIT " . self::$limit : "");
+
+        return MySql::query($sql)->fetchAll(\PDO::FETCH_CLASS);
+    }
 }
 
 new BookModel;

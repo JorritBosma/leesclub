@@ -15,15 +15,32 @@ class BooksController
 
         View::render('books', [
             'books' => $books,
+            'h1'    => 'Gelezen boeken'
         ]);
     }
 
     public function wishlist()
     {
+        $books = BookModel::wishlist();
+
+        View::render('books', [
+            'books' => $books,
+            'h1'    => 'Verlanglijst'
+        ]);
     }
 
     public function show()
     {
+        if (isset($_GET['book_id']) && (int)$_GET['book_id'] > 0 && !is_null(BookModel::get($_GET['book_id']))) {
+            $book = BookModel::get($_GET['book_id']);
+            dd($book);
+            View::render(
+                'book-show',
+                [
+                    'book' => $book
+                ]
+            );
+        }
     }
 
     public function add()

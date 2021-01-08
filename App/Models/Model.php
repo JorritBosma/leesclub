@@ -53,13 +53,13 @@ class Model
 
         $fields = "*";
 
-        if (count($selectedFields) > 0) {
+        if (is_array($selectedFields) && count($selectedFields) > 0) {
             $fields = self::composeQuery($selectedFields);
         }
 
         $sql = "SELECT " . $fields .  " FROM " . self::$model . " WHERE id=" . $id . " AND deleted IS NULL";
         $res = MySql::query($sql)->fetchAll(PDO::FETCH_CLASS);
-
+        // dd($res);
         return count($res) > 0 ? $res[0] : null;
     }
 
