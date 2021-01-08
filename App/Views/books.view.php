@@ -1,7 +1,17 @@
 <?php require('partials/header.view.php'); ?>
-
-<h1>Boeken- én wenslijst. If-logica moet checken welke titel hier komt.</h1>
-
-<p>Een lijst van gelezen of nog te lezen boeken, aanklikbaar voor afzonderlijke showpages per boek.</p>
+<div class="container-fluid">
+    <?php if (isset($vars['books']) && count($vars['books'])) : ?>
+        <div class="row">
+            <?php foreach ($vars['books'] as $book) : ?>
+                <div class="col-md-4">
+                    <h3><?= $book->author_full_name ?></h3><br>
+                    <h5><?= $book->title ?></h5>
+                </div>
+            <?php endforeach ?>
+        </div>
+    <?php else : ?>
+        <h3>Geen boeken gevonden.</h3>
+    <?php endif ?>
+</div>
 
 <?php require('partials/footer.view.php'); ?>

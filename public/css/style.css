@@ -56,11 +56,16 @@ body {
 
 .footer {
     width: 100%;
-    text-align: center;
-}
+    position: fixed;
+    bottom: 0;
+    
+ }
 
 .login-overlay {
-    height: 100vh;
+    /* height: 100vh; */
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 30%;
+    
 }
 /* 
 .center-box {
