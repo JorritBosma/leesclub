@@ -104,7 +104,7 @@ class Model
         return $data;
     }
 
-    private static function composeQuery(array $fields)
+    public static function composeQuery(array $fields)
     {
         $getFields = '';
 

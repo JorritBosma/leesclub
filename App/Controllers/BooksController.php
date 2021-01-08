@@ -3,16 +3,29 @@
 namespace App\Controllers;
 
 use App\Libraries\View;
+use App\Models\BookModel;
 
 class BooksController
 {
+    // Index goes to the book page, which is an overview of READ books.
+    // The method readlist only fetches books where finished_reading is true.
     public function index()
     {
-        return View::render('books');
-        // $books = App::get('leesclub')->selectAll('books') where read is true;
-        // return view('books', compact('books'));
-        // Alleen de gelezen boeken worden meegegeven naar de view.
+        $books = BookModel::readlist();
+
+        View::render('books', [
+            'books' => $books,
+        ]);
     }
+
+    public function wishlist()
+    {
+    }
+
+    public function show()
+    {
+    }
+
     public function add()
     {
         return View::render('add-book');
