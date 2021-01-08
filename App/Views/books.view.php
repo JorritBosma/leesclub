@@ -4,9 +4,13 @@
     <?php if (isset($vars['books']) && count($vars['books'])) : ?>
         <div class="row">
             <?php foreach ($vars['books'] as $book) : ?>
-                <div class="col-md-4">
-                    <h3><?= $book->author_full_name ?></h3><br>
-                    <h5><?= $book->title ?></h5>
+                <div class="col-md-4 bookindex">
+                    <a href="books/show?book_id=<?= $book->id ?>">
+                        <img src="public/images/one_book.png" alt="">
+                        <br>
+                        <h5><?= $book->title ?><h5>
+                                <p> Door <?= $book->author_full_name ?></p>
+                    </a>
                 </div>
             <?php endforeach ?>
         </div>
