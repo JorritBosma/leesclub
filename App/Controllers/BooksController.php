@@ -50,6 +50,22 @@ class BooksController
 
     public function store()
     {
+
+        $book = new BookModel;
+        $book = [
+            'author_first_name'   => $_POST['author_first_name'],
+            'author_prefix'       => $_POST['author_prefix'],
+            'author_last_name'    => $_POST['author_last_name'],
+            'title'               => $_POST['title'],
+            'length'              => $_POST['length'],
+            'published_in'        => $_POST['published_in'],
+            'finished_reading'    => isset($_POST['finished_reading']) ? true : false,
+            'finished_date'       => $_POST['finished_date'],
+            'created'             => $_POST['created'] = date('Y-m-d H:i:s'),
+        ];
+
+        BookModel::store($book);
+        return View::redirect('books');
         // App::get('leesclub')->insert('books', [
         //     'name' => $_POST['name']
         // ]);
