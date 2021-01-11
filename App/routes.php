@@ -25,3 +25,4 @@ $router->get('books-add', 'App/Controllers/BooksController.php@add');
 $router->post('books-add', 'App/Controllers/BooksController.php@store');
 $router->get('wishlist', 'App/Controllers/BooksController.php@wishlist');
 $router->get('books-show', 'App/Controllers/BooksController.php@show');
+$router->post('books-delete', 'App/Controllers/BooksController.php@destroy');

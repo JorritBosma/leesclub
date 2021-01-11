@@ -10,6 +10,9 @@
             <p>Update-button.</p>
             <p>Vinkje 'gelezen' boolean.</p>
             <p>Commentaren van gebruikers.</p>
+            <form class="d-inline" action="/books-delete?book_id<?= $vars['book']->id ?>" method="POST">
+                <button class="btn btn-danger">Wis boek</button>
+            </form>
         </div>
     </div>
 </div>

@@ -78,5 +78,7 @@ class BooksController
 
     public function destroy(int $id)
     {
+        Bookmodel::destroy($book->id);
+        return View::redirect('books');
     }
 }
