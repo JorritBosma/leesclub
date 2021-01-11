@@ -33,7 +33,7 @@ class BooksController
     {
         if (isset($_GET['book_id']) && (int)$_GET['book_id'] > 0 && !is_null(BookModel::get($_GET['book_id']))) {
             $book = BookModel::get($_GET['book_id']);
-            dd($book);
+            // dd($book);
             View::render(
                 'book-show',
                 [

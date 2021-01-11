@@ -34,7 +34,7 @@ body {
     opacity: 0.7;
 }
 
-.register-icon div, .login-icon div {
+.register-icon div, .login-icon div, .add-book-icon div {
     display: inline;
     position: absolute;
 }
@@ -44,11 +44,16 @@ body {
     opacity: 0.7;
 }
 
+.add-book-icon img {
+    width: 20px;
+    opacity: 0.7;
+}
+
 .bookindex img {
     width: 35px;
 }
 
-.register-icon h3, .login-icon h3 {
+.register-icon h3, .login-icon h3, .add-book-icon h3 {
     height: 50px;
     display: inline;
     margin-left: 14px;
@@ -69,7 +74,19 @@ body {
     /* height: 100vh; */
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 30%;
-    
+ 
+}
+
+.reveal-if-active {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.uitgelezen:checked ~ .reveal-if-active {
+    opacity: 1;
+    max-height: 100px; /* little bit of a magic number :( */
+    overflow: visible;
 }
 /* 
 .center-box {

@@ -7,6 +7,7 @@
                 <a href="/">Home</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="/about">About</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="books">Gelezen boeken</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="books-add">Boek toevoegen</a>&nbsp;&nbsp;|&nbsp;&nbsp;
                 <a href="wishlist">Wenslijst</a>
             </span>
         </div>

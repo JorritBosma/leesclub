@@ -5,11 +5,11 @@
         <div class="row">
             <?php foreach ($vars['books'] as $book) : ?>
                 <div class="col-md-4 bookindex">
-                    <a href="books/show?book_id=<?= $book->id ?>">
+                    <a href="books-show?book_id=<?= $book->id ?>">
                         <img src="public/images/one_book.png" alt="">
                         <br>
                         <h5><?= $book->title ?><h5>
-                                <p> Door <?= $book->author_full_name ?></p>
+                                <p> Door <?= $book->author_first_name ?> <?= $book->author_prefix ?> <?= $book->author_last_name ?></p>
                     </a>
                 </div>
             <?php endforeach ?>
