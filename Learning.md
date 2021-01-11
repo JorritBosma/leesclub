@@ -48,5 +48,10 @@ First I moved all my read-books to a seeder-file which I can use later. For now 
 I defined my first function in the BookModel! To fetch books which I have read. I passed them on to the books.view and it's working. Need to style it but will do that later.
 I decided I do not need a WishlistController or view. It is basically doing and showing the same, the difference is just one boolean (finished_reading). Added it now.
 During the question hour I learned how to access an object inside an array: $vars['books']->title (from the array vars, get the value of the key books (that is an object with the record of one book) and give me the value of title).
-Next step: before I dare to go to relationships, let's make add-book form. Just because it's fun to add stuff from the browser. Also do some basic styling/navbar maybe.
+Now it is possible to add a book using a form. 
+Difficulty was the form-input checkbox finished_reading posted the string 'on' or nothing (NULL), whereas I want a boolean/tinyint in my table. I was almost there with the solution (isset) and Toby helped me with the final bit.
+
+Next up: delete!
+After that: update!
+
 Next big step: relationships between books and users. I will add some books created by my Test-user.Do I need a seperate table? Or is the 'created by' sufficient? Probably it is not sufficient, because what if I want to add functionality later on where you can push a button on someone elses show-book.view to add it to your own list. Created by will be meaningless then. Let's find out. After that, I need to pass on the read books associated with the logged-in user, probably using $_SESSION or $_GET.

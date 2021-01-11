@@ -13,7 +13,7 @@
         <form action="/books-add" method="POST" name="frmAddBook" class="row g-3 mt-2">
             <div class="col-md-8">
                 <label for="author_first_name" class="form-label">Voornaam schrijver</label>
-                <input type="text" class="form-control" name="first_name" id="first_name" maxlength="255" required>
+                <input type="text" class="form-control" name="author_first_name" id="author_first_name" maxlength="255" required>
             </div>
 
             <div class="col-md-4">
@@ -23,8 +23,7 @@
 
             <div class="col-md-8 mb-3">
                 <label for="author_last_name" class="form-label">Achternaam schrijver</label>
-                <input type="text" class="form-control" name="author_last_name" id="author_last_name" maxlength="255"
-                    required>
+                <input type="text" class="form-control" name="author_last_name" id="author_last_name" maxlength="255" required>
             </div>
 
             <div class="col-md-8 mb-3">
