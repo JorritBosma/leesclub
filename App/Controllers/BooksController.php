@@ -72,14 +72,37 @@ class BooksController
         // return View::redirect('books');
     }
 
+    public function renderEditForm()
+    {
+        // first we have to render the editForm and fill values with existing data
+    }
+
     public function update()
     {
+        // second we have to store the data in the existing record, updating it.
+        $book = new BookModel;
+        $book = [
+            'author_first_name'   => $_POST['author_first_name'],
+            'author_prefix'       => $_POST['author_prefix'],
+            'author_last_name'    => $_POST['author_last_name'],
+            'title'               => $_POST['title'],
+            'length'              => $_POST['length'],
+            'published_in'        => $_POST['published_in'],
+            'finished_reading'    => isset($_POST['finished_reading']) ? true : false,
+            'finished_date'       => $_POST['finished_date'],
+            'created'             => $_POST['created'] = date('Y-m-d H:i:s'),
+        ];
+
+        $id = $_POST['book-id'];
+        Bookmodel::update($book, $id);
+
+        // Finally we want to redirect to the updated showpage of this book, how?
+        return View::redirect('books-show?book_id=$id');
     }
 
     public function destroy()
     {
-        dd($_GET);
-        Bookmodel::destroy($_GET['book_id']);
+        Bookmodel::destroy($_POST['book_id']);
         return View::redirect('books');
     }
 }

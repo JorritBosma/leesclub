@@ -11,10 +11,9 @@
             <p>Update-button.</p>
             <p>Vinkje 'gelezen' boolean.</p>
             <p>Commentaren van gebruikers.</p>
-            <a href="books-delete?book_id=<?= $vars['book']->id ?>">Verwijderen</a>
-            <form class="d-inline" action="/books-delete?book_id=<?= $vars['book']->id ?>" method="GET">
-                <button class="btn btn-danger">Wis boek</button>
-            </form>
+            <a href="books-edit?book_id=<?= $vars['book']->id ?>" class="btn btn-warning">Bewerken</a>
+            <a href="books-delete?book_id=<?= $vars['book']->id ?>" class="btn btn-danger">Verwijderen</a>
+
         </div>
     </div>
 </div>
