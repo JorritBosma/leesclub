@@ -76,7 +76,10 @@ class BooksController
     {
     }
 
-    public function destroy(int $id)
+    public function destroy()
     {
+        dd($_GET);
+        Bookmodel::destroy($_GET['book_id']);
+        return View::redirect('books');
     }
 }
