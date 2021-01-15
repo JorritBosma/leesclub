@@ -19,20 +19,16 @@ class MySql
      */
     private static function connect($dbHost = null, $dbName = null, $dbUser = null, $dbPass = null)
     {
-        if (empty($dbHost) || empty($dbName) || empty($dbUser) || empty($dbPass))
-        {
+        if (empty($dbHost) || empty($dbName) || empty($dbUser) || empty($dbPass)) {
             $dbHost = $_ENV['DB_HOST'];
             $dbName = $_ENV['DB_NAME'];
             $dbUser = $_ENV['DB_USER'];
             $dbPass = $_ENV['DB_PASS'];
         }
-        
-        try
-        {
+
+        try {
             $dbh = new \PDO('mysql:host=' . $dbHost . ';dbname=' . $dbName, $dbUser, $dbPass);
-        }
-        catch (\PDOException $e)
-        {
+        } catch (\PDOException $e) {
             print "Error!: " . $e->getMessage() . "<br/>";
             die();
         }
@@ -52,6 +48,8 @@ class MySql
     public static function query($query, $executeString = array(), $dbHost = null, $dbName = null, $dbUser = null, $dbPass = null)
     {
         $dbh = self::connect($dbHost = null, $dbName = null, $dbUser = null, $dbPass = null);
+
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         try {
             $stmt = $dbh->prepare($query);
@@ -79,11 +77,10 @@ class MySql
 
         $query = "INSERT INTO " . $table . "(";
 
-        foreach ($data as $col => $val)
-        {
+        foreach ($data as $col => $val) {
             $fields .= $col . ",";
             array_push($values, $val);
-            
+
             $questionMarks .= "?,";
             $index++;
         }
@@ -92,7 +89,7 @@ class MySql
         $questionMarks = rtrim($questionMarks, ',');
 
         $query .= $fields . ") VALUES (" . $questionMarks . ")";
-        
+
         self::query($query, $values);
 
         return (int)self::$lastInsertedId;
@@ -109,13 +106,11 @@ class MySql
         $setStr = "";
         $params = array();
 
-        foreach ($data as $col => $val)
-        {
-            if (trim(strtolower($col)) === 'id')
-            {
+        foreach ($data as $col => $val) {
+            if (trim(strtolower($col)) === 'id') {
                 continue;
             }
-            
+
             $setStr .= "`$col` = :$col,";
             $params[$col] = $val;
         }
@@ -124,7 +119,7 @@ class MySql
 
         $params['id'] = $id;
         $query = "UPDATE $table SET $setStr WHERE id = :id";
-        
+
         self::query($query, $params);
     }
 
@@ -138,5 +133,4 @@ class MySql
             self::update($data, $table, $id);
         }
     }
-
 }
