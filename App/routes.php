@@ -26,4 +26,5 @@ $router->post('books-add', 'App/Controllers/BooksController.php@store');
 $router->get('wishlist', 'App/Controllers/BooksController.php@wishlist');
 $router->get('books-show', 'App/Controllers/BooksController.php@show');
 $router->post('books-delete', 'App/Controllers/BooksController.php@destroy');
-$router->get('books-edit', 'App/Controllers/BooksController.php@update');
+$router->get('books-edit', 'App/Controllers/BooksController.php@renderEditForm');
+$router->post('books-edit', 'App/Controllers/BooksController.php@update');

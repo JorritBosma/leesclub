@@ -74,7 +74,17 @@ class BooksController
 
     public function renderEditForm()
     {
-        // first we have to render the editForm and fill values with existing data
+        // first we have to render the editForm and fill values with existing data, same process as show
+        // Take id from $_GET, fetch record, pass on record as $vars in array
+        if (isset($_GET['book_id']) && (int)$_GET['book_id'] > 0 && !is_null(BookModel::get($_GET['book_id']))) {
+            $book = BookModel::get($_GET['book_id']);
+            return View::render(
+                'edit-book',
+                [
+                    'book' => $book
+                ]
+            );
+        }
     }
 
     public function update()
@@ -86,18 +96,20 @@ class BooksController
             'author_prefix'       => $_POST['author_prefix'],
             'author_last_name'    => $_POST['author_last_name'],
             'title'               => $_POST['title'],
-            'length'              => $_POST['length'],
+            'length'              => isset($_POST['length']) ? $_POST['length'] : 0,
             'published_in'        => $_POST['published_in'],
             'finished_reading'    => isset($_POST['finished_reading']) ? true : false,
             'finished_date'       => $_POST['finished_date'],
             'created'             => $_POST['created'] = date('Y-m-d H:i:s'),
         ];
-
+        // dd($_POST);
         $id = $_POST['book-id'];
         Bookmodel::update($book, $id);
 
-        // Finally we want to redirect to the updated showpage of this book, how?
-        return View::redirect('books-show?book_id=$id');
+        // Finally we want to redirect to the updated showpage of this book. 
+        // Still missing: flash message! Leave it for now.
+
+        return View::redirect('books-show?book_id=' . $id);
     }
 
     public function destroy()
