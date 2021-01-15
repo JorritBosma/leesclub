@@ -66,10 +66,6 @@ class BooksController
 
         BookModel::store($book);
         return View::redirect('books');
-        // App::get('leesclub')->insert('books', [
-        //     'name' => $_POST['name']
-        // ]);
-        // return View::redirect('books');
     }
 
     public function renderEditForm()
@@ -100,21 +96,23 @@ class BooksController
             'published_in'        => $_POST['published_in'],
             'finished_reading'    => isset($_POST['finished_reading']) ? true : false,
             'finished_date'       => $_POST['finished_date'],
-            'created'             => $_POST['created'] = date('Y-m-d H:i:s'),
+            'updated'             => $_POST['updated'] = date('Y-m-d H:i:s'),
         ];
         // dd($_POST);
         $id = $_POST['book-id'];
         Bookmodel::update($book, $id);
 
-        // Finally we want to redirect to the updated showpage of this book. 
-        // Still missing: flash message! Leave it for now.
-
-        return View::redirect('books-show?book_id=' . $id);
+        // Finally we want to redirect to the updated showpage of this book.
+        // First did it with redirect, then decided to used flash-message. 
+        // Flash-message: had to rewrite FlashMessages so it is Bootstrap v5.0!
+        $msg = new \Plasticbrain\FlashMessages\FlashMessages();
+        $msg->success('Het boek is met succes bijgewerkt', 'books-show?book_id=' . $id);
+        // return View::redirect('books-show?book_id=' . $id);
     }
 
     public function destroy()
     {
-        Bookmodel::destroy($_POST['book_id']);
+        Bookmodel::destroy($_GET['book_id']);
         return View::redirect('books');
     }
 }

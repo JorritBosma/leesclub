@@ -63,7 +63,7 @@
             <?php endif; ?>
 
             <input type="hidden" name="destination" value="<?= $_SERVER["REQUEST_URI"]; ?>" />
-            <input type="hidden" name="book-id" value="<?= $vars['book']->id ?>">
+            <input type="hidden" id="book-id" name="book-id" value="<?= $vars['book']->id ?>">
 
             <div class="col-md-12 mb-3">
                 <input type="submit" class="btn btn-dark" value="Submit">
